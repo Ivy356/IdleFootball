@@ -78,7 +78,7 @@
     };
   }]);
 
-  app.controller('HRController', function() {
+  app.controller('PlayersController', function() {
     this.players = players;
     this.isVisible = function(player) {
       return player.isVisible(pitch);
@@ -94,17 +94,17 @@
     };
   });
 
-  app.controller('UpgradesController', function() {
-    this.upgrades = upgrades;
-    this.isVisible = function(upgrade) {
-      return upgrade.isVisible(lab, allObjects);
+  app.controller('TacticsController', function() {
+    this.tactics = tactics;
+    this.isVisible = function(tactic) {
+      return tactic.isVisible(pitch, allObjects);
     };
-    this.isAvailable = function(upgrade) {
-      return upgrade.isAvailable(lab, allObjects);
+    this.isAvailable = function(tactic) {
+      return tactic.isAvailable(pitch, allObjects);
     };
-    this.upgrade = function(upgrade) {
-      if (upgrade.buy(lab, allObjects)) {
-        UI.showUpdateValue("#update-funding", upgrade.cost);
+    this.tactic = function(tactic) {
+      if (tactic.buy(pitch, allObjects)) {
+        UI.showUpdateValue("#update-funding", tactic.cost);
       }
     }
   });
