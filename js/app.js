@@ -109,20 +109,13 @@
     }
   });
 
-  app.controller('AchievementsController', function($scope) {
-    $scope.achievements = achievements;
-    $scope.progress = function() {
-      return achievements.filter(function(a) { return a.validate(lab, allObjects, lastSaved); }).length;
-    };
-  });
-
   app.controller('SaveController',
       ['$scope', '$interval', function($scope, $interval) {
     lastSaved = new Date().getTime();
     $scope.lastSaved = lastSaved;
     $scope.saveNow = function() {
       var saveTime = new Date().getTime();
-      game.lab.state.time += saveTime - lastSaved;
+      game.pitch.state.time += saveTime - lastSaved;
       game.save();
       lastSaved = saveTime;
       $scope.lastSaved = lastSaved;
@@ -139,7 +132,7 @@
   }]);
 
   app.controller('StatsController', function($scope) {
-    $scope.lab = lab;
+    $scope.pitch = pitch;
   });
 
   analytics.init();
