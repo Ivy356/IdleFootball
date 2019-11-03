@@ -38,7 +38,7 @@
     this.click = function() {
       pitch.clickDetector();
       detector.addEvent();
-      UI.showUpdateValue("#update-data", lab.state.detector);
+      UI.showUpdateValue("#update-data", pitch.state.detector);
       return false;
     };
   });
@@ -49,7 +49,7 @@
   });
 
   app.controller('PitchController', ['$interval', function($interval) {
-    this.lab = lab;
+    this.pitch = pitch;
     this.showDetectorInfo = function() {
       if (!this._detectorInfo) {
         this._detectorInfo = Helpers.loadFile('html/detector.html');
@@ -64,7 +64,7 @@
         sum += players[i].state.hired * players[i].state.rate;
       }
       if (sum > 0) {
-        lab.acquireData(sum);
+        pitch.acquireData(sum);
         UI.showUpdateValue("#update-data", sum);
         detector.addEventExternal(workers.map(function(w) {
           return w.state.hired;
