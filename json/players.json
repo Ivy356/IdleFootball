@@ -1,1 +1,20 @@
 
+  {
+    "key": "players-balontelli",
+    "name": "Balon Telli",
+    "description": "Basic player that kicks footballs.",
+    "cost_increase": 1.12,
+    "state": {
+      "cost": 15,
+      "rate": 1
+    }
+
+    {
+    "key": "players-schartesteinger",
+    "name": "Schar Testeinger",
+    "description": "Good player that kick footballs in good area.",
+    "cost_increase": 1.12,
+    "state": {
+      "cost": 100,
+      "rate": 8
+    }
