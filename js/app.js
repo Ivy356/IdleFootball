@@ -36,7 +36,7 @@
 
   app.controller('DetectorController', function() {
     this.click = function() {
-      lab.clickDetector();
+      pitch.clickDetector();
       detector.addEvent();
       UI.showUpdateValue("#update-data", lab.state.detector);
       return false;
